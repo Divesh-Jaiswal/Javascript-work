@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scroll-Animation</title>
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+</head>
+<body>
+
+	<div class="container mt-5">
+		<div class="row text-center">
+			<div class="col-lg-4 col-md-4 col-12" id="card-one">
+				<div class="card" >
+					  <img class="card-img-top" src="images/service.jpg" alt="Card image">
+					  <div class="card-body">
+					    <h4 class="card-title">John Doe</h4>
+					    <p class="card-text">Some example text.</p>
+					    <a href="#" class="btn btn-success">See Profile</a>
+					  </div>
+				</div>
+				
+			</div>
+			<div class="col-lg-4 col-md-4 col-12" id="card-two">
+				<div class="card" >
+					  <img class="card-img-top" src="images/service.jpg" alt="Card image">
+					  <div class="card-body">
+					    <h4 class="card-title">John Doe</h4>
+					    <p class="card-text">Some example text.</p>
+					    <a href="#" class="btn btn-success">See Profile</a>
+					  </div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-4 col-12" id="card-three">
+				<div class="card" >
+					  <img class="card-img-top" src="images/service.jpg" alt="Card image">
+					  <div class="card-body">
+					    <h4 class="card-title">John Doe</h4>
+					    <p class="card-text">Some example text.</p>
+					    <a href="#" class="btn btn-success">See Profile</a>
+					  </div>
+				</div>
+			</div>
+
+			
+
+
+		</div>
+	</div>
+
+	       <section class="bg-success mt-5" id="welcome" >
+				<article class="py-5 text-center">
+					<div>
+						<h3 class="display-4 text-white">Welome Divesh Jaiswal!</h3>
+						
+					</div>
+				</article>
+	       </section>
+
+	    
+	    <div class="container mt-5">
+		<div class="row text-center">
+			<div class="col-lg-4 col-md-4 col-12" id="card-four">
+				<div class="card" >
+					  <img class="card-img-top" src="images/service.jpg" alt="Card image">
+					  <div class="card-body">
+					    <h4 class="card-title">John Doe</h4>
+					    <p class="card-text">Some example text.</p>
+					    <a href="#" class="btn btn-success">See Profile</a>
+					  </div>
+				</div>
+				
+			</div>
+			<div class="col-lg-4 col-md-4 col-12" id="card-five">
+				<div class="card" >
+					  <img class="card-img-top" src="images/service.jpg" alt="Card image">
+					  <div class="card-body">
+					    <h4 class="card-title">John Doe</h4>
+					    <p class="card-text">Some example text.</p>
+					    <a href="#" class="btn btn-success">See Profile</a>
+					  </div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-4 col-12" id="card-six">
+				<div class="card" >
+					  <img class="card-img-top" src="images/service.jpg" alt="Card image">
+					  <div class="card-body">
+					    <h4 class="card-title">John Doe</h4>
+					    <p class="card-text">Some example text.</p>
+					    <a href="#" class="btn btn-success">See Profile</a>
+					  </div>
+				</div>
+			</div>
+
+			
+
+
+		</div>
+	</div>
+
+
+		<script
+	  src="https://code.jquery.com/jquery-3.4.1.min.js"
+	  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	  crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function() {
+			$(window).scroll(function() {
+				var positiontop = $(document).scrollTop();
+				console.log(positiontop);
+				if((positiontop > 18) && (positiontop < 269))
+				{
+					$('#card-one').addClass(' animated bounceInLeft');
+					$('#card-two').addClass(' animated bounceInLeft');
+					$('#card-three').addClass(' animated bounceInLeft');
+					}
+				if((positiontop > 309) && (positiontop < 421))
+
+				{
+					
+					$('#welcome').addClass(' animated rollOut');
+				}
+				if(positiontop > 420) 
+				{
+
+					$('#card-four').addClass(' animated rubberBand');
+					$('#card-five').addClass(' animated rubberBand');
+					$('#card-six').addClass(' animated rubberBand');
+				}
+
+
+			});
+			
+		});
+		
+
+	</script>
+   
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
