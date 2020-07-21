@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fetch form details</title>
+</head>
+<body>
+	<form>
+		<label>Name</label>
+		<input type="text" id="fname" placeholder="name" ><br>
+		<label>Email</label>
+		<input type="text" id="femail" placeholder="emalil"><br>
+		<label>Contact No.</label>
+		<input type="text" id="fcontact" placeholder="phone"><br>
+		
+		<button type="button" onclick="showData()">Submit</button>
+	</form>
+		<table  id ="table" border="1">
+		<tr>
+			 <th >Name</th>
+		     <th>Email</th>
+			 <th>Contact no.</th>
+		</tr>
+		<!-- <tr>
+			
+				<td id="tname"></td>
+				<td id="temail"></td>
+				<td id="tcontact"></td>
+				
+
+			
+		</tr>	  -->
+				
+	</table>
+	
+
+	<script type="text/javascript">
+		function showData(){
+
+			   var name = document.getElementById("fname").value;
+			 var  email  = document.getElementById("femail").value;
+			 var contact = document.getElementById("fcontact").value;
+
+
+			 var tbl = document.getElementById("table");
+			 var row = tbl.insertRow();
+			 var cell1 = row.insertCell();
+			 var cell2 = row.insertCell();
+			 var cell3 = row.insertCell();
+
+			 cell1.innerHTML = name;
+			 cell2.innerHTML = email;
+			 cell3.innerHTML = contact;
+
+			 	// document.getElementById("tname").innerHTML = name;
+			 	// document.getElementById("temail").innerHTML = email;
+			 	// document.getElementById("tcontact").innerHTML = contact;
+			 
+
+
+		}
+	</script>
+
+
+
+</body>
+</html>
+

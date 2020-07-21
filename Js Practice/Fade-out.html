@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		var opacity = 0;
+		var interval = 0;
+		function fadeOut()
+		{
+			 interval = setInterval(hide,200);	
+		}
+		function fadeIn()
+		{
+			 interval = setInterval(show,200);
+
+		}
+		 function show()
+		{
+            var img =document.getElementById("imgg");
+            opacity = Number(window.getComputedStyle(img).getPropertyValue("opacity"));
+            if(opacity < 1)
+            {
+            	opacity = opacity+0.1;
+            	img.style.opacity = opacity;
+            }
+            
+            
+        }	
+		function hide()
+		{
+            var img =document.getElementById("imgg");
+            opacity = Number(window.getComputedStyle(img).getPropertyValue("opacity"));
+            if(opacity > 0)
+            {
+            	opacity = opacity-0.1;
+            	img.style.opacity = opacity;
+            }
+            else
+            {
+            	clearInterval(interval);
+            }
+		}
+
+	</script>
+
+</head>
+<body>
+	<button type="button" onclick="fadeOut()">Fade Out</button>
+	<img id="imgg" src="img/divesh logo.png">
+	<button type="button" onclick="fadeIn()">Fade In</button>
+</body>
+</html>

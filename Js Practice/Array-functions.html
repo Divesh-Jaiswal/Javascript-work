@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array functions</title>
+	
+</head>
+<body>
+	<p id="p1"></p>
+	<p id="p2"></p>
+	<button type="button" onclick="addName()">Add New Name</button>
+	<button type="button" onclick="removeName()">Remove Name</button>
+	<input type="text" id="input" >
+	<button type="button" onclick="addFirst()">Add name to start</button>
+	<button type="button" onclick="duplicate()">Duplicate</button>
+	
+
+
+	<script type="text/javascript">
+	
+
+		var people = ["Greg" , "Baris" , "Peter" , "Chris"];
+		document.getElementById("p1").innerHTML=people;
+		function addName()
+		{
+		    
+		    var name = prompt(" enter name to add", "");
+			  if (name != null) {
+			    people.push(name);
+			    
+			    
+			  }
+			  document.getElementById("p2").innerHTML=people;
+			  
+				
+		}
+		function removeName()
+		{   var name = prompt(" enter name to remove", "");
+			var n = people.includes(name);
+			  if( n!= true)
+			  	{ alert("name is not present in arry"); }
+			
+			  else if(name != null) {
+			  	   var a = people.indexOf(name);
+			        delete people[a];
+			    
+			    
+			  }
+
+			  document.getElementById("p2").innerHTML=people;
+		}	
+		function addFirst()
+		{
+			 var name = document.getElementById("input").value;
+			 people.unshift(name);
+
+			 document.getElementById("p2").innerHTML=people;
+		}
+
+		function duplicate()
+		{
+		 var len = people.length;
+		 // while(len < 2)
+		  var newa = people.slice(0,len-2);
+		  document.getElementById("p2").innerHTML=newa;
+		}
+		
+	</script>
+
+</body>
+</html>

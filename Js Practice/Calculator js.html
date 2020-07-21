@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<style type="text/css">
+		input{margin-bottom: 8px;}
+	</style>
+
+	<script type="text/javascript">
+	    	
+         function Addition()
+			{   a=Number(document.getElementById("Num1").value);
+		        b=Number(document.getElementById("Num2").value);
+                c = a+b;
+                document.getElementById("result").value=c;
+
+			}
+
+
+		function subtraction()
+			{   a=Number(document.getElementById("Num1").value);
+		        b=Number(document.getElementById("Num2").value);
+                c = a-b;
+                document.getElementById("result").value=c;
+
+			}
+		function Multiply()
+			{   a=Number(document.getElementById("Num1").value);
+		        b=Number(document.getElementById("Num2").value);
+                c = a*b;
+                document.getElementById("result").value=c;
+
+			}
+		function Multiply()
+			{   a=Number(document.getElementById("Num1").value);
+		        b=Number(document.getElementById("Num2").value);
+                c = a*b;
+                document.getElementById("result").value=c;
+
+			}
+		function Division()
+			{   a=Number(document.getElementById("Num1").value);
+		        b=Number(document.getElementById("Num2").value);
+                c = a/b;
+                document.getElementById("result").value=c;
+
+			}							
+
+	</script>
+</head>
+<body>
+	<form>
+		Number 1:<input type="text" id="Num1" ><br>
+		Number 2:<input type="text" id="Num2" ><br>
+		Result:<input type="text" id="result"><br>
+
+        <input type="button" value="+" id="add" onclick="Addition()">
+        <input type="button" value="-" id="sub" onclick="subtraction()">
+        <input type="button" value="*" id="mul" onclick="Multiply()">
+        <input type="button" value="/" id="div" onclick="Division()" >
+
+	</form>
+
+</body>
+</html>

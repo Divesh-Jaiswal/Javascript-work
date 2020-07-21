@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form 2</title>
+	<style type="text/css">
+		input{
+			border:3px solid green;
+			margin-bottom: 6px;
+
+		}
+		p{
+			font-size: 15px;
+			color: grey;
+		}
+	</style>
+	<script type="text/javascript">
+    
+
+		function phoneValidation(event)
+					{
+						
+						var code = event.which;
+						if((code == 43) || (code == 45)){
+							return true;
+							
+							
+						}
+						if((code >= 48) && (code < 58)){
+							return true;
+							
+						}
+						else{
+
+							document.getElementById("uphone").style.borderColor = "red";
+							document.getElementById("phone-para").style.display = '';
+							return false;
+						}
+						
+					}
+		function emailValidation()
+		{
+			var uemail = document.getElementById("email").value;
+			var atindex = uemail.indexOf("@");
+			var dotindex = uemail.lastIndexOf(".");
+					
+					if(atindex <= 0 || atindex+1 >= dotindex || dotindex+1 >= uemail.length-1  )
+					{
+						document.getElementById("email").style.borderColor = "red";
+						document.getElementById("email-para").style.display = '';
+						// alert("Invalid Email");
+						return false;
+					}
+					else
+					{
+					  return true;
+					}
+		}
+
+        function nameValidation()
+        {
+        	var uname = document.getElementById("name").value;
+        	if(uname.trim() == null || uname.trim() == "" || uname == "a" )
+				{
+					document.getElementById("name").style.borderColor = "red";
+					document.getElementById("name-para").style.display = '';
+					return false;
+				}
+        }
+
+        
+	
+
+	</script>
+</head>
+<body>
+    
+	 <div>  
+		<input type="text" id="name" placeholder="username" oninput="return nameValidation()">
+		<p id="name-para" style="display: none;">Name can not be blank</p>
+	</div>
+
+	<div>
+		<input type="text" id="email" placeholder="Email" oninput="return emailValidation()">
+		
+		<p id="email-para" style="display: none;">Enter valid email</p>
+	</div>
+	
+	<div>
+	    <input  type="text" id="uphone"  placeholder="Phone"  onkeypress="return phoneValidation(event)">
+	    <p id="phone-para" style="display: none;">Enter a valid number!</p>	
+	</div>
+
+	    <button  type="submit" >Submit</button>
+	   
+
+</body>
+</html>

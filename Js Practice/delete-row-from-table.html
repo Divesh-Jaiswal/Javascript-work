@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delete row</title>
+</head>
+<body>
+ <Form name='Form1'>
+  <Table id='dataTbl' border='1' cellspacing='0' cellpadding='5'>
+ 	
+	<TR>
+	<TD> Item </TD>
+	<TD> Desc </TD>
+	<TD> Price </TD>
+	</TR>
+
+	<TR>
+	<TD> Item 1 </TD>
+	<TD> Desc 1 </TD>
+	<TD> 10.00 </TD>
+	<TD> <input type=checkbox name='delBox'>
+	</TR>
+
+	<TR>
+	<TD> Item 2 </TD>
+	<TD> Desc 2 </TD>
+	<TD> 20.00 </TD>
+	<TD> <input type=checkbox name='delBox'>
+	</TR>
+
+	<TR>
+	<TD> Item 3 </TD>
+	<TD> Desc 3 </TD>
+	<TD> 30.00 </TD>
+	<TD> <input type=checkbox name='delBox'>
+	</TR>
+ 
+	</Table>
+	<br>
+	<input type=button value="Delete Rows" onclick="deleteRows()">
+</Form>
+
+<script type="text/javascript">
+	function deleteRows(){
+
+	isTable = document.getElementById('dataTbl');
+	nBoxes = document.getElementsByName('delBox');
+	   // Array.isArray(nBoxes);
+	   console.log(Array.isArray(nBoxes));
+
+	for (i=nBoxes.length-1; i>=0; i--)
+		{if (nBoxes[i].checked == true){isTable.deleteRow(i+1)}}
+}
+</script>
+
+</body>
+</html>

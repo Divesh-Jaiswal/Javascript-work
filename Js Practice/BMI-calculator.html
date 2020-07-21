@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+        	<div class="card-header text-center">BMI CALCULATOR</div>
+        	<div class="card-body">
+        		<form class="w-25 mx-auto">
+        			<div class="form-group">
+        				<label>Weight:</label>
+        				<input type="text" id="weight" class="form-control" placeholder="weight in Kg">
+        			</div>
+        			<div class="form-group">
+        				<label>Height:</label>
+        				<input type="text" id="height" class="form-control" placeholder="height in feet">
+        			</div>
+        			<div class="form-group">
+        				<label>Your BMI Value:</label>
+        				<input type="text"  id="bmivalue" class="form-control">
+        			</div>
+        			<div>
+        				<button type="button" class="btn btn-warning" onclick="getbmiValue()">Check BMIs</button>
+        			</div>
+        		</form>
+        	</div>
+        	<div class="card-header text-center text-dark">A healthy BMI range between 19 and 25</div>
+
+        </div>
+
+
+    </div>
+
+
+<script type="text/javascript">
+	function getbmiValue(){
+		var weight = document.getElementById("weight").value;
+		var height = document.getElementById("height").value;
+
+		height = height * 12 ;  //got inches from feet
+		height = height * 0.025; //got meters from inches
+
+		var newbmi = weight / (height * height);
+		newbmi = Math.round(newbmi);
+		
+		document.getElementById("bmivalue").value = newbmi;
+	}
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>    
+</body>
+</html>

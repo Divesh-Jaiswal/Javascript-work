@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form 1</title>
+	<script type="text/javascript">
+		function validateForm()
+		{
+			var uname = document.getElementById("username").value;
+			var uemail = document.getElementById("email").value;
+			var uphone = document.getElementById("phone").value;
+			if(uname == null || uname =="" || uemail == null || uemail =="" || uphone == null || uphone ==""  )
+				{
+					alert("Blank values are not allowed");
+					return false;
+				}
+
+			    else
+			    {
+			
+				    var atindex = uemail.indexOf("@");
+					var dotindex = uemail.lastIndexOf(".");
+					// var dindex = uemail.indexOf(".");
+					if(atindex <= 0 || atindex+1>=dotindex || dotindex+1 >= uemail.length-1  )
+					{
+						alert("Invalid Email");
+						return false;
+					}
+					else
+					{
+						true;
+					}
+				}	
+			
+		}
+					function checkCode(event)
+					{
+						// alert(event.which);
+						var code = event.which;
+						if((code == 43) || (code == 45)){
+							return true;
+						}
+						if((code >=48) && (code < 58)){
+							return true;
+						}
+						else{
+
+							return false;
+						}
+						
+					}		
+	</script>
+</head>
+<body>
+
+	<form action="practice.html" onsubmit="return validateForm()" method="post" >
+	<h1 >FORM 1</h1>
+	<label>USERNAME</label>
+	<br>
+	<input type="text" id="username" placeholder="username" >
+	<br>
+	<label>EMAIL</label>
+	<br>
+	<input type="text" id="email" placeholder="email" >
+	<br>
+	<label>PHONE</label>
+	<br>
+	<input type="text" id="phone" placeholder="phone" onkeypress="return checkCode(event)" >
+	<br>
+	<button type="Submit">Submit</button>
+
+</form>
+
+</body>
+</html>
